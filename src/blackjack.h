@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/28 15:11:52 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/01/29 19:54:23 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/01/31 21:17:46 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <ctype.h>
 
 int		black_jack_hand(char *str);
 char	get_card(void);
