@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 14:39:47 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/01/31 21:33:02 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/02/02 14:08:18 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,13 @@ int		player_hand(char *dealer)
 		/* 
 		 * Adding in a check here for Split. gonna try and do the double implementation after
 		 * hopefully this doesnt break the functionality of the regular hit or stay
-		 * incorporating two into one should be fun
+		 * incorporating two into one should be fun.
+		 * calls the Player_split function and creates a new game with two hands. will work on printing player hands/dealer hands later
 			if (hand[0] == hand[1])
 			{
-				printf("/n%s", "Would you like to Hit, Stand (s), or Split (p)? ");
-				fgets(next, 50, stdin);
-				if (tolower(next[0]) == 'h')
-				{
-					hand[i] == get_card();
-					i++;
-				}
-				else if ((tolower(next[0]) == 'p'))
-				{
-					CALL ANOTHER FUNCTION OR PROGRAM TO HAVE TWO HANDS?
-					hand2[i] == get_card();
-					i dont fucking know someone help me
-				}
-				else
-				{
-					return (black_jack_hand(hand));
-				}
+				return (player_split(hand[0], hand[1]));
+				 //this should exit out of the while loop and return?? maybe i 
+				//should just have the playersplit function end the game since returning to this function would be pointless
 			}
 		*/
 		printf("\n%s", "Would you like to either Hit, Stand, or Double? ");
