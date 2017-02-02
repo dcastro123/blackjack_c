@@ -1,6 +1,9 @@
 clear
 cd src > /dev/null
-cat intro.txt
+cd intro > /dev/null
+clang score.c > /dev/null
+./a.out
+cd .. > /dev/null
 read input
 if [ "$input" = "1" ] ; then
 	clear

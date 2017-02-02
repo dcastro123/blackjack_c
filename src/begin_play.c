@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/28 23:38:29 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/01/30 20:39:58 by jtrujill         ###   ########.fr       */
+/*   Updated: 2017/02/01 21:49:07 by jtrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ void	begin_play(void)
 	{
 		printf("\n\nHope you had fun playing, your final chip count is %d. Goodbye\n", chips);
 	}
+	if (chips != 0)
+		high_score(chips);
 	sleep(3);
 	system("clear");
 }

@@ -17,15 +17,3 @@
 				      email: jtrujill@student.42.us.org
 
 
-
-  --------------------------------------------------------------------
-
-
-			Press Enter to Start the Game
-
-			    Press [1] for Credits
-
-		    Press [2] for Linux Compatibility Mode
-
-
-  --------------------------------------------------------------------
