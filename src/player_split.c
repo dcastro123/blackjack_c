@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 21:04:11 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/02/02 14:08:14 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/02/02 15:53:38 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,19 @@ int		player_split(char *hand1, char *hand2)
 		else
 		{
 			//result = black_jack_hand(hand1_temp);
+			//break;
 			return (black_jack_hand(hand1_temp));
 		result = black_jack_hand(hand1_temp);
 		print_hand(hand1_temp, result, 1);
 		if (flag == 1)
 		{
 			//result += 200;
+			//break;
 			return (result + 200);
 		else
 		{
 			//result += 0;
+			//break;
 			return (result);
 	}
 	while (black_jack_hand(hand2_temp) < 21)
@@ -104,7 +107,13 @@ int		player_split(char *hand1, char *hand2)
 		result2 = black_jack_hand(hand2_temp);
 		print_hand(hand2_temp, result2, 1);
 		if (flag == 1)
+		{
+		//	result += 200;
+		//	break;
 			return (result2 + 200);
 		else
+		{
+		//	result2 += 0;
+		//	break;
 			return (result2);
 

@@ -6,7 +6,7 @@
 /*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 14:39:47 by jtrujill          #+#    #+#             */
-/*   Updated: 2017/02/02 14:08:18 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/02/02 15:56:58 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		player_hand(char *dealer)
 {
 	int		i;
 	int		d;
+	int		flag;
 	int		res;
 	char	*hand;
 	char	next[50];
@@ -23,6 +24,7 @@ int		player_hand(char *dealer)
 	i = 0;
 	res = 0;
 	d = 0;
+	flag = 0;
 	memset(next, '\0', 50);
 	hand = strdup((const char *)("......................"));
 	hand[i] = get_card();
@@ -55,28 +57,34 @@ int		player_hand(char *dealer)
 				//should just have the playersplit function end the game since returning to this function would be pointless
 			}
 		*/
-		printf("\n%s", "Would you like to either Hit, Stand, or Double? ");
+		printf("\n%s", "Would you like to either Hit (h), Stand (s), Surrender (u), or Double (d)? ");
 		fgets(next, sizeof(next), stdin);
-		if (tolower(next[0]) == 'h')
+		switch(tolower(next[0]))
 		{
-			hand[i] = get_card();
-			i++;
-		}
-		else if (tolower(next[0]) == 'd')
-		{
-			hand[i] = get_card();
-			i++;
-			d = 1;
-		}
-		else
-		{
-			return (black_jack_hand(hand));
+			case 'h':
+				hand[i] = get_card();
+				i++;
+				break;
+			case 'd':
+				hand[i] = get_card();
+				i++;
+				d = 1;
+				break;
+			case 'u':
+				flag = 1;
+				break;
+			default:
+				return (black_jack_hand(hand));
 		}
 		res = black_jack_hand(hand);
 		print_hand(hand, res, 1);
 		if (d == 1)
 		{
 			return (res + 200);
+		}
+		else if (flag == 1)
+		{
+			return (res + 300);
 		}
 	}
 	return (res);
